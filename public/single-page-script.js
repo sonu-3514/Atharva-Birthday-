@@ -211,15 +211,23 @@ function loadVideosFromFolder() {
         const videoSrc = videoFile.startsWith('http') ? videoFile : `videos/${videoFile}`;
         
         videoItem.innerHTML = `
-            <video controls preload="metadata" controlsList="nodownload" playsinline webkit-playsinline>
-                <source src="${videoSrc}" type="video/mp4">
-                Your browser does not support the video tag.
+            <video 
+                controls 
+                preload="auto" 
+                playsinline 
+                webkit-playsinline 
+                muted
+                poster=""
+                controlsList="nodownload nofullscreen"
+                disablePictureInPicture
+                style="width: 100%; max-width: 100%; height: auto; display: block;"
+            >
+                <source src="${videoSrc}" type="video/mp4" />
+                <source src="${videoSrc}" type="video/webm" />
+                Your browser does not support the video tag. Please try a different browser.
             </video>
             <div class="video-label">
                 <span>Video #${index + 1}</span>
-                <a href="${videoSrc}" download="Atharva-Birthday-Video-${index + 1}.mp4" class="download-btn" title="Download Video">
-                    📥 Download
-                </a>
             </div>
         `;
         
