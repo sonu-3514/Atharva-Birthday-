@@ -190,7 +190,7 @@ const videosList = document.getElementById('videosList');
 // List of video files in /public/videos/ folder
 // Add your video filenames here (update this array when you add new videos)
 const videoFiles = [
-    'WhatsApp Video 2025-12-30 at 7.02.02 PM.mp4'
+    'https://res.cloudinary.com/dapiempj3/video/upload/v1767129658/video_20250102_134252_h3vjar.mp4'
 ];
 
 // Load videos from folder
@@ -207,12 +207,20 @@ function loadVideosFromFolder() {
         const videoItem = document.createElement('div');
         videoItem.className = 'video-item';
         
+        // Check if videoFile is a full URL (starts with http) or local file
+        const videoSrc = videoFile.startsWith('http') ? videoFile : `videos/${videoFile}`;
+        
         videoItem.innerHTML = `
-            <video controls preload="metadata">
-                <source src="videos/${videoFile}" type="video/mp4">
+            <video controls preload="metadata" controlsList="nodownload" playsinline webkit-playsinline>
+                <source src="${videoSrc}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="video-label">Video #${index + 1}</div>
+            <div class="video-label">
+                <span>Video #${index + 1}</span>
+                <a href="${videoSrc}" download="Atharva-Birthday-Video-${index + 1}.mp4" class="download-btn" title="Download Video">
+                    📥 Download
+                </a>
+            </div>
         `;
         
         videosList.appendChild(videoItem);
@@ -236,7 +244,14 @@ if (photoWrappers.length > 0 && lightbox) {
             const label = wrapper.nextElementSibling;
             
             lightboxImg.src = img.src;
-            lightboxCaption.textContent = label.textContent;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.innerHTML = `
+                ${label.textContent}
+                <br>
+                <a href="${img.src}" download="Atharva-Birthday-${label.textContent}.jpg" class="lightbox-download" style="color: white; text-decoration: none; margin-top: 10px; display: inline-block; padding: 8px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 25px;">
+                    📥 Download Photo
+                </a>
+            `;
             lightbox.classList.add('active');
         });
     });

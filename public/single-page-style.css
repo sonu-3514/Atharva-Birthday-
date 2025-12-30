@@ -592,6 +592,28 @@ body::after {
     font-size: 1.1rem;
     font-weight: bold;
     color: #667eea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
 }
 
 .video-delete {
@@ -670,6 +692,8 @@ body::after {
     border-radius: 15px;
     display: block;
     image-orientation: from-image;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
 }
 
 .photo-overlay {
@@ -933,15 +957,17 @@ body::after {
     animation: zoomIn 0.3s ease;
     image-orientation: from-image;
     object-fit: contain;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
 }
 
 @keyframes zoomIn {
     from {
-        transform: scale(0.5);
+        transform: scale(0.5) rotate(0deg);
         opacity: 0;
     }
     to {
-        transform: scale(1);
+        transform: scale(1) rotate(0deg);
         opacity: 1;
     }
 }
@@ -1174,6 +1200,43 @@ body::after {
     .submit-btn {
         font-size: 1rem;
         padding: 0.9rem 2rem;
+    }
+    
+    .download-btn {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* ===== LANDSCAPE ORIENTATION (MOBILE) ===== */
+@media (max-width: 768px) and (orientation: landscape) {
+    .section {
+        padding: 60px 1rem 1rem;
+    }
+    
+    .baby-name {
+        font-size: 2rem;
+    }
+    
+    .cake {
+        transform: scale(0.5);
+    }
+    
+    .typed-container {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    
+    .video-item video {
+        max-height: 50vh;
+    }
+    
+    .photo-img {
+        height: 200px;
+    }
+    
+    .lightbox-content {
+        max-height: 80vh;
     }
 }
 
