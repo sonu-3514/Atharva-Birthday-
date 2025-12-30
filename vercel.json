@@ -5,10 +5,6 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/public/single-page.html"
-    },
-    {
       "source": "/(.*)",
       "destination": "/public/$1"
     }
