@@ -249,17 +249,12 @@ if (photoWrappers.length > 0 && lightbox) {
     photoWrappers.forEach((wrapper) => {
         wrapper.addEventListener('click', () => {
             const img = wrapper.querySelector('.photo-img');
-            const label = wrapper.nextElementSibling;
             
             lightboxImg.src = img.src;
             lightboxImg.alt = img.alt;
-            lightboxCaption.innerHTML = `
-                ${label.textContent}
-                <br>
-                <a href="${img.src}" download="Atharva-Birthday-${label.textContent}.jpg" class="lightbox-download" style="color: white; text-decoration: none; margin-top: 10px; display: inline-block; padding: 8px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 25px;">
-                    📥 Download Photo
-                </a>
-            `;
+            // Do not show the gallery label or download button in the lightbox.
+            // Keep the caption empty so only the image is shown in full-screen.
+            lightboxCaption.textContent = '';
             lightbox.classList.add('active');
         });
     });

@@ -5,6 +5,48 @@
     box-sizing: border-box;
 }
 
+/* ===== Responsive Heading Adjustments ===== */
+@media (max-width: 768px) {
+    .gallery-title,
+    .wishes-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        padding: 0 1rem;
+    }
+
+    .videos-heading,
+    .photos-heading {
+        font-size: 1.4rem;
+        padding: 0 0.5rem;
+    }
+
+    .photo-img {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-title,
+    .wishes-title {
+        font-size: 1.6rem;
+        line-height: 1.15;
+    }
+
+    .videos-heading,
+    .photos-heading {
+        font-size: 1.05rem;
+    }
+
+    .photos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .photo-img {
+        height: 160px;
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -703,9 +745,10 @@ body::after {
     object-fit: cover;
     border-radius: 15px;
     display: block;
-    image-orientation: none;
-    -webkit-transform: rotate(0deg) !important;
-    transform: rotate(0deg) !important;
+    /* Respect EXIF orientation so images display correctly on all devices */
+    image-orientation: from-image;
+    -webkit-transform: none;
+    transform: none;
 }
 
 .photo-overlay {
@@ -967,10 +1010,11 @@ body::after {
     border-radius: 10px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     animation: zoomIn 0.3s ease;
-    image-orientation: none;
+    /* Respect EXIF orientation so rotated phone photos display upright */
+    image-orientation: from-image;
     object-fit: contain;
-    -webkit-transform: rotate(0deg) !important;
-    transform: rotate(0deg) !important;
+    -webkit-transform: none !important;
+    transform: none !important;
 }
 
 @keyframes zoomIn {
