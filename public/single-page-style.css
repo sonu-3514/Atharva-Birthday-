@@ -45,6 +45,32 @@
     .photo-img {
         height: 160px;
     }
+    
+    /* Lightbox navigation - mobile friendly */
+    .lightbox-nav {
+        width: 45px;
+        height: 45px;
+        font-size: 35px;
+    }
+    
+    .lightbox-prev {
+        left: 10px;
+    }
+    
+    .lightbox-next {
+        right: 10px;
+    }
+    
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+        font-size: 40px;
+    }
+    
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 80%;
+    }
 }
 
 html {
@@ -1004,6 +1030,46 @@ body::after {
     transform: rotate(90deg);
 }
 
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%) scale(1.1);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.lightbox-nav:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
 .lightbox-content {
     max-width: 90%;
     max-height: 85%;
@@ -1289,6 +1355,21 @@ body::after {
     .download-btn {
         font-size: 0.85rem;
         padding: 0.4rem 0.8rem;
+    }
+    
+    /* Lightbox navigation arrows - smaller on tablet */
+    .lightbox-nav {
+        width: 50px;
+        height: 50px;
+        font-size: 40px;
+    }
+    
+    .lightbox-prev {
+        left: 15px;
+    }
+    
+    .lightbox-next {
+        right: 15px;
     }
 }
 

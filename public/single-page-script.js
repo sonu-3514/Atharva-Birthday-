@@ -244,36 +244,111 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxClose = document.getElementById('lightboxClose');
 const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+
+let currentImageIndex = 0;
+const allImages = [];
 
 if (photoWrappers.length > 0 && lightbox) {
+    // Collect all images into an array
     photoWrappers.forEach((wrapper) => {
+        const img = wrapper.querySelector('.photo-img');
+        allImages.push({
+            src: img.src,
+            alt: img.alt
+        });
+    });
+
+    // Function to update arrow visibility based on current index
+    function updateArrows() {
+        if (lightboxPrev) {
+            // Hide previous arrow if at first image
+            if (currentImageIndex === 0) {
+                lightboxPrev.style.display = 'none';
+            } else {
+                lightboxPrev.style.display = 'flex';
+            }
+        }
+        
+        if (lightboxNext) {
+            // Hide next arrow if at last image
+            if (currentImageIndex === allImages.length - 1) {
+                lightboxNext.style.display = 'none';
+            } else {
+                lightboxNext.style.display = 'flex';
+            }
+        }
+    }
+
+    // Function to show image at specific index
+    function showImage(index) {
+        // Don't allow going below 0 or above last image
+        if (index < 0) {
+            index = 0;
+        }
+        if (index >= allImages.length) {
+            index = allImages.length - 1;
+        }
+        
+        currentImageIndex = index;
+        lightboxImg.src = allImages[index].src;
+        lightboxImg.alt = allImages[index].alt;
+        lightboxCaption.textContent = '';
+        
+        // Update arrow visibility
+        updateArrows();
+    }
+
+    // Open lightbox when clicking on any photo
+    photoWrappers.forEach((wrapper, index) => {
         wrapper.addEventListener('click', () => {
-            const img = wrapper.querySelector('.photo-img');
-            
-            lightboxImg.src = img.src;
-            lightboxImg.alt = img.alt;
-            // Do not show the gallery label or download button in the lightbox.
-            // Keep the caption empty so only the image is shown in full-screen.
-            lightboxCaption.textContent = '';
+            currentImageIndex = index;
+            showImage(currentImageIndex);
             lightbox.classList.add('active');
         });
     });
     
+    // Previous button
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentImageIndex - 1);
+        });
+    }
+
+    // Next button
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentImageIndex + 1);
+        });
+    }
+
+    // Close button
     if (lightboxClose) {
         lightboxClose.addEventListener('click', () => {
             lightbox.classList.remove('active');
         });
     }
     
+    // Close when clicking outside the image
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) {
             lightbox.classList.remove('active');
         }
     });
     
+    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-            lightbox.classList.remove('active');
+        if (lightbox.classList.contains('active')) {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            } else if (e.key === 'ArrowLeft') {
+                showImage(currentImageIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+                showImage(currentImageIndex + 1);
+            }
         }
     });
 }
