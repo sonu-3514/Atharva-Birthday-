@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 1st Birthday Atharva! 🎂</title>
+    <link rel="stylesheet" href="atharva-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">🎂 Atharva's 1st Birthday</div>
+            <ul class="nav-menu">
+                <li><a href="atharva-home.html" class="nav-link active">Home</a></li>
+                <li><a href="atharva-gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="atharva-feedback.html" class="nav-link">Wishes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Floating Balloons Animation -->
+    <div class="balloons-container" id="balloonsContainer"></div>
+    
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Main Content -->
+    <div class="hero-section">
+        <!-- Name Display with Animation -->
+        <div class="name-display">
+            <h1 class="baby-name" id="babyName">ATHARVA</h1>
+            <div class="age-badge">
+                <span class="emoji">🎈</span>
+                <span>Turning 1 Year Old!</span>
+                <span class="emoji">🎈</span>
+            </div>
+        </div>
+
+        <!-- Animated Birthday Cake -->
+        <div class="cake-container">
+            <div class="cake">
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+                <div class="cake-layer layer1">
+                    <div class="number-one">1</div>
+                </div>
+                <div class="cake-layer layer2"></div>
+                <div class="cake-layer layer3"></div>
+            </div>
+        </div>
+
+        <!-- Birthday Date -->
+        <div class="birth-date">
+            <span class="emoji">🎂</span>
+            Born on 2nd January 2025
+            <span class="emoji">🎂</span>
+        </div>
+
+        <!-- Typed Animation Wishes -->
+        <div class="wishes-section">
+            <h2 class="wishes-heading">✨ Birthday Wishes ✨</h2>
+            <div class="typed-container">
+                <span id="typed"></span>
+            </div>
+        </div>
+
+        <!-- Call to Action Buttons -->
+        <div class="cta-buttons">
+            <a href="atharva-gallery.html" class="btn btn-primary">
+                📸 View Precious Memories
+            </a>
+            <a href="atharva-feedback.html" class="btn btn-secondary">
+                💌 Leave Your Wishes
+            </a>
+        </div>
+
+        <!-- About Atharva Section -->
+        <div class="about-section">
+            <h2 class="section-title">💖 About Our Little Star 💖</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    <strong>Atharva</strong> came into our lives like a blessing on <strong>2nd January 2025</strong>, 
+                    filling our hearts with immense joy and unconditional love. This precious little angel 
+                    has brought sunshine, laughter, and countless beautiful moments to our family.
+                </p>
+                <p class="about-text">
+                    Every day with Atharva is a celebration! His adorable smile, curious eyes, 
+                    and innocent giggles make the world a better place. As he turns 1 year old, 
+                    we are grateful for every moment, every milestone, and every memory we've created together.
+                </p>
+                <p class="about-text">
+                    On this special day, we pray that God blesses him with good health, endless happiness, 
+                    wisdom, and success in all his future endeavors. May his life be filled with love, 
+                    laughter, and countless reasons to smile! 🌟
+                </p>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="floating-emojis">
+            <span class="emoji-float" style="--delay: 0s; --x: 10%;">🎈</span>
+            <span class="emoji-float" style="--delay: 0.5s; --x: 20%;">⭐</span>
+            <span class="emoji-float" style="--delay: 1s; --x: 30%;">❤️</span>
+            <span class="emoji-float" style="--delay: 1.5s; --x: 40%;">🎁</span>
+            <span class="emoji-float" style="--delay: 2s; --x: 50%;">🎉</span>
+            <span class="emoji-float" style="--delay: 2.5s; --x: 60%;">🎈</span>
+            <span class="emoji-float" style="--delay: 3s; --x: 70%;">✨</span>
+            <span class="emoji-float" style="--delay: 3.5s; --x: 80%;">🥳</span>
+            <span class="emoji-float" style="--delay: 4s; --x: 90%;">🎊</span>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="birthday-music.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Music Control Button -->
+    <button class="music-control" id="musicBtn" title="Play/Pause Music">
+        <span id="musicIcon">🎵</span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Made with ❤️ for Atharva's 1st Birthday | January 2, 2026</p>
+    </footer>
+
+    <script src="atharva-script.js"></script>
+</body>
+</html>

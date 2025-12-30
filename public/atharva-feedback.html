@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wishes for Atharva 💌</title>
+    <link rel="stylesheet" href="atharva-style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">🎂 Atharva's 1st Birthday</div>
+            <ul class="nav-menu">
+                <li><a href="atharva-home.html" class="nav-link">Home</a></li>
+                <li><a href="atharva-gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="atharva-feedback.html" class="nav-link active">Wishes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Floating Balloons -->
+    <div class="balloons-container" id="balloonsContainer"></div>
+
+    <!-- Feedback Section -->
+    <div class="feedback-section">
+        <div class="feedback-header">
+            <h1 class="feedback-title">💌 Leave Your Birthday Wishes 🎉</h1>
+            <p class="feedback-subtitle">Share your love and blessings for little Atharva</p>
+        </div>
+
+        <!-- Feedback Form -->
+        <div class="feedback-form-container">
+            <form id="feedbackForm" class="feedback-form">
+                <div class="form-group">
+                    <label for="userName">Your Name <span class="required">*</span></label>
+                    <input type="text" id="userName" name="userName" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="userEmail">Email (Optional)</label>
+                    <input type="email" id="userEmail" name="userEmail" placeholder="your.email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="relationship">Your Relationship</label>
+                    <select id="relationship" name="relationship">
+                        <option value="">Select...</option>
+                        <option value="Family">Family Member</option>
+                        <option value="Friend">Friend</option>
+                        <option value="Relative">Relative</option>
+                        <option value="Colleague">Colleague</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="wishMessage">Your Birthday Wishes <span class="required">*</span></label>
+                    <textarea id="wishMessage" name="wishMessage" rows="5" placeholder="Write your heartfelt wishes for Atharva..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">
+                    ✨ Send Wishes ✨
+                </button>
+            </form>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage" style="display: none;">
+                <div class="success-icon">✅</div>
+                <h3>Thank You!</h3>
+                <p>Your beautiful wishes have been sent successfully! 💖</p>
+            </div>
+        </div>
+
+        <!-- Display Submitted Wishes -->
+        <div class="wishes-display">
+            <h2 class="wishes-display-title">🌟 Birthday Wishes from Loved Ones 🌟</h2>
+            <div id="wishesList" class="wishes-list">
+                <!-- Sample Wishes -->
+                <div class="wish-card">
+                    <div class="wish-header">
+                        <div class="wish-avatar">👨‍👩‍👦</div>
+                        <div class="wish-info">
+                            <h4 class="wish-author">Grandparents</h4>
+                            <span class="wish-relation">Family</span>
+                        </div>
+                    </div>
+                    <p class="wish-text">
+                        Our dearest Atharva, may you grow up to be healthy, wise, and successful. 
+                        You bring so much joy to our lives. Happy 1st Birthday, our little prince! 
+                        God bless you always. 👑❤️
+                    </p>
+                    <div class="wish-footer">
+                        <span class="wish-date">January 2, 2026</span>
+                    </div>
+                </div>
+
+                <div class="wish-card">
+                    <div class="wish-header">
+                        <div class="wish-avatar">👨‍💼</div>
+                        <div class="wish-info">
+                            <h4 class="wish-author">Uncle & Aunty</h4>
+                            <span class="wish-relation">Family</span>
+                        </div>
+                    </div>
+                    <p class="wish-text">
+                        Happy 1st Birthday to the cutest little angel! May your life be filled 
+                        with laughter, love, and countless blessings. We love you so much! 🎈🎂💕
+                    </p>
+                    <div class="wish-footer">
+                        <span class="wish-date">January 2, 2026</span>
+                    </div>
+                </div>
+
+                <div class="wish-card">
+                    <div class="wish-header">
+                        <div class="wish-avatar">👶</div>
+                        <div class="wish-info">
+                            <h4 class="wish-author">Cousins</h4>
+                            <span class="wish-relation">Family</span>
+                        </div>
+                    </div>
+                    <p class="wish-text">
+                        Happy Birthday little buddy! Can't wait to play with you when you grow up! 
+                        Stay happy and keep smiling always! 😊🎉🎁
+                    </p>
+                    <div class="wish-footer">
+                        <span class="wish-date">January 2, 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="birthday-music.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Music Control Button -->
+    <button class="music-control" id="musicBtn" title="Play/Pause Music">
+        <span id="musicIcon">🎵</span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Made with ❤️ for Atharva's 1st Birthday | January 2, 2026</p>
+    </footer>
+
+    <script src="atharva-script.js"></script>
+</body>
+</html>

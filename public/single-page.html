@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 1st Birthday Atharva! 🎂</title>
+    <link rel="stylesheet" href="single-page-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+    <!-- Floating Balloons -->
+    <div class="balloons-container" id="balloonsContainer"></div>
+    
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Fixed Navigation -->
+    <nav class="fixed-nav">
+        <div class="nav-brand">🎂 Atharva's Birthday</div>
+        <div class="nav-links">
+            <a href="#home" class="nav-item">Home</a>
+            <a href="#gallery" class="nav-item">Gallery</a>
+            <a href="#wishes" class="nav-item">Wishes</a>
+        </div>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="section home-section">
+        <div class="container">
+            <!-- Name Display -->
+            <div class="name-display">
+                <h1 class="baby-name" id="babyName">ATHARVA</h1>
+                <div class="age-badge">
+                    <span class="emoji">🎈</span>
+                    <span>Turning 1 Year Old!</span>
+                    <span class="emoji">🎈</span>
+                </div>
+            </div>
+
+            <!-- Birthday Cake -->
+            <div class="cake-container">
+                <div class="cake">
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+                    <div class="cake-layer layer1">
+                        <div class="number-one">1</div>
+                    </div>
+                    <div class="cake-layer layer2"></div>
+                    <div class="cake-layer layer3"></div>
+                </div>
+            </div>
+
+            <!-- Birth Date -->
+            <div class="birth-date">
+                <span class="emoji">🎂</span>
+                Born on 2nd January 2025
+                <span class="emoji">🎂</span>
+            </div>
+
+            <!-- Typed Wishes -->
+            <div class="wishes-box">
+                <h2 class="wishes-heading">✨ Birthday Wishes ✨</h2>
+                <div class="typed-container">
+                    <span id="typed"></span>
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <div class="about-box">
+                <h2 class="section-title">💖 About Our Little Star 💖</h2>
+                <div class="about-content">
+                    <p class="about-text">
+                        <strong>Atharva</strong> came into our lives like a blessing on <strong>2nd January 2025</strong>, 
+                        filling our hearts with immense joy and unconditional love. This precious little angel 
+                        has brought sunshine, laughter, and countless beautiful moments to our family.
+                    </p>
+                    <p class="about-text">
+                        Every day with Atharva is a celebration! His adorable smile, curious eyes, 
+                        and innocent giggles make the world a better place. As he turns 1 year old, 
+                        we are grateful for every moment, every milestone, and every memory we've created together.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Scroll Down Arrow -->
+            <div class="scroll-arrow">
+                <a href="#gallery">
+                    <span>📸</span>
+                    <p>View Memories</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="gallery-title">📸 Atharva's Precious Memories 💖</h2>
+                <p class="gallery-subtitle">Beautiful moments captured with love</p>
+            </div>
+
+            <!-- Videos Display (Top of Gallery - From Folder) -->
+            <div id="videosContainer" class="videos-container">
+                <h3 class="videos-heading">🎥 🌟 The Magical Moment Atharva Arrived 🌟 🎬</h3>
+                <div id="videosList" class="videos-grid">
+                    <!-- Videos will load from /public/videos/ folder -->
+                </div>
+            </div>
+
+            <!-- Photos Grid (3 per row) -->
+            <div class="photos-section">
+                <h3 class="photos-heading">📷 Photo Gallery</h3>
+                <div class="photos-grid">
+                    <!-- Photo 1 -->
+                    <div class="photo-card">
+                        <div class="photo-wrapper">
+                            <img src="images/1000329538.jpg" alt="Atharva Memory 1" class="photo-img">
+                            <div class="photo-overlay">
+                                <span class="overlay-text">Click to View</span>
+                            </div>
+                        </div>
+                        <div class="photo-label">Memory #1</div>
+                    </div>
+
+                    <!-- Photo 2 -->
+                    <div class="photo-card">
+                        <div class="photo-wrapper">
+                            <img src="images/IMG-20250816-WA0025(1).jpg" alt="Atharva Memory 2" class="photo-img">
+                            <div class="photo-overlay">
+                                <span class="overlay-text">Click to View</span>
+                            </div>
+                        </div>
+                        <div class="photo-label">Memory #2</div>
+                    </div>
+
+                    <!-- Photo 3 -->
+                    <div class="photo-card">
+                        <div class="photo-wrapper">
+                            <img src="images/IMG-20251230-WA0038.jpg" alt="Atharva Memory 3" class="photo-img">
+                            <div class="photo-overlay">
+                                <span class="overlay-text">Click to View</span>
+                            </div>
+                        </div>
+                        <div class="photo-label">Memory #3</div>
+                    </div>
+
+                    <!-- Photo 4 -->
+                    <div class="photo-card">
+                        <div class="photo-wrapper">
+                            <img src="images/IMG-20251230-WA0051.jpg" alt="Atharva Memory 4" class="photo-img">
+                            <div class="photo-overlay">
+                                <span class="overlay-text">Click to View</span>
+                            </div>
+                        </div>
+                        <div class="photo-label">Memory #4</div>
+                    </div>
+
+                    <!-- Photo 5 -->
+                    <div class="photo-card">
+                        <div class="photo-wrapper">
+                            <img src="images/IMG-20251230-WA0052(1).jpg" alt="Atharva Memory 5" class="photo-img">
+                            <div class="photo-overlay">
+                                <span class="overlay-text">Click to View</span>
+                            </div>
+                        </div>
+                        <div class="photo-label">Memory #5</div>
+                    </div>
+
+                    <!-- Photo 6 -->
+                    <div class="photo-card">
+                        <div class="photo-wrapper">
+                            <img src="images/IMG-20251230-WA0053(1).jpg" alt="Atharva Memory 6" class="photo-img">
+                            <div class="photo-overlay">
+                                <span class="overlay-text">Click to View</span>
+                            </div>
+                        </div>
+                        <div class="photo-label">Memory #6</div>
+                    </div>
+
+                    <!-- Photo 7 -->
+                    <div class="photo-card">
+                        <div class="photo-wrapper">
+                            <img src="images/IMG_20250403_115954.jpg" alt="Atharva Memory 7" class="photo-img">
+                            <div class="photo-overlay">
+                                <span class="overlay-text">Click to View</span>
+                            </div>
+                        </div>
+                        <div class="photo-label">Memory #7</div>
+                    </div>
+
+                    <!-- Photo 8 -->
+                    <div class="photo-card">
+                        <div class="photo-wrapper">
+                            <img src="images/IMG_20250702_205648 (1).jpg" alt="Atharva Memory 8" class="photo-img">
+                            <div class="photo-overlay">
+                                <span class="overlay-text">Click to View</span>
+                            </div>
+                        </div>
+                        <div class="photo-label">Memory #8</div>
+                    </div>
+
+                    <!-- Photo 9 -->
+                    <div class="photo-card">
+                        <div class="photo-wrapper">
+                            <img src="images/IMG_20250912_115024.jpg" alt="Atharva Memory 9" class="photo-img">
+                            <div class="photo-overlay">
+                                <span class="overlay-text">Click to View</span>
+                            </div>
+                        </div>
+                        <div class="photo-label">Memory #9</div>
+                    </div>
+
+                    <!-- Photo 10 -->
+                    <div class="photo-card">
+                        <div class="photo-wrapper">
+                            <img src="images/IMG_20251230_161731.jpg" alt="Atharva Memory 10" class="photo-img">
+                            <div class="photo-overlay">
+                                <span class="overlay-text">Click to View</span>
+                            </div>
+                        </div>
+                        <div class="photo-label">Memory #10</div>
+                    </div>
+
+                    <!-- Photo 11 -->
+                    <div class="photo-card">
+                        <div class="photo-wrapper">
+                            <img src="images/IMG_20251230_161915.jpg" alt="Atharva Memory 11" class="photo-img">
+                            <div class="photo-overlay">
+                                <span class="overlay-text">Click to View</span>
+                            </div>
+                        </div>
+                        <div class="photo-label">Memory #11</div>
+                    </div>
+
+                    <!-- Photo 12 -->
+                    <div class="photo-card">
+                        <div class="photo-wrapper">
+                            <img src="images/IMG_20251230_164253.jpg" alt="Atharva Memory 12" class="photo-img">
+                            <div class="photo-overlay">
+                                <span class="overlay-text">Click to View</span>
+                            </div>
+                        </div>
+                        <div class="photo-label">Memory #12</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WISHES SECTION -->
+    <section id="wishes" class="section wishes-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="wishes-title">💌 Leave Your Birthday Wishes 🎉</h2>
+                <p class="wishes-subtitle">Share your love and blessings for little Atharva</p>
+            </div>
+
+            <!-- Feedback Form -->
+            <div class="feedback-container">
+                <form id="feedbackForm" class="feedback-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="userName">Your Name <span class="required">*</span></label>
+                            <input type="text" id="userName" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="relationship">Relationship</label>
+                            <select id="relationship">
+                                <option value="">Select...</option>
+                                <option value="Family">Family</option>
+                                <option value="Friend">Friend</option>
+                                <option value="Relative">Relative</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="wishMessage">Your Birthday Wishes <span class="required">*</span></label>
+                        <textarea id="wishMessage" rows="4" placeholder="Write your heartfelt wishes..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        ✨ Send Wishes ✨
+                    </button>
+                </form>
+
+                <!-- Success Message -->
+                <div class="success-message" id="successMessage" style="display: none;">
+                    <div class="success-icon">✅</div>
+                    <h3>Thank You!</h3>
+                    <p>Your wishes have been sent! 💖</p>
+                </div>
+            </div>
+
+            <!-- Display Wishes -->
+            <div class="wishes-display">
+                <h3 class="display-heading">🌟 Birthday Wishes 🌟</h3>
+                <div id="wishesList" class="wishes-list">
+                    <!-- Sample Wish -->
+                    <div class="wish-card">
+                        <div class="wish-header">
+                            <div class="wish-avatar">👨‍👩‍👦</div>
+                            <div class="wish-info">
+                                <h4>Grandparents</h4>
+                                <span class="wish-tag">Family</span>
+                            </div>
+                        </div>
+                        <p class="wish-text">
+                            Our dearest Atharva, may you grow up healthy, wise, and successful. 
+                            Happy 1st Birthday! God bless you always. 👑❤️
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" src="" alt="Full Size">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- Music Control -->
+    <button class="music-control" id="musicBtn">
+        <span id="musicIcon">🎵</span>
+    </button>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="music/happy-birthday-357371.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Made with ❤️ for Atharva's 1st Birthday | January 2, 2026</p>
+    </footer>
+
+    <script src="single-page-script.js"></script>
+</body>
+</html>

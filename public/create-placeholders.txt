@@ -1,0 +1,12 @@
+To complete the birthday website, please add these 3 image files to the public/ folder:
+
+1. birthday-banner.png - Birthday banner (800x200px recommended)
+   Download from: https://www.flaticon.com or search "happy birthday banner png"
+
+2. birthday-cake.gif - Animated cake (300x300px recommended)  
+   Download from: https://giphy.com/search/birthday-cake
+
+3. balloon-border.png - Balloon decorations (full width, 200px height)
+   Search: "balloon border png transparent"
+
+After adding these files, open index-new.html in your browser!

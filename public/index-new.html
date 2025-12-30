@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Happy Birthday Atharva</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="birthday-style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="loader">
+                <button id="play" class="golden-btn">Start</button>
+            </div>
+        </div>
+    </div>
+    <audio class="song" controls loop>
+        <source src="birthday-music.mp3">
+        Your browser isn't invited for super fun audio time.
+    </audio>
+    <canvas id="confetti"></canvas>
+    <div class="main">
+        <div class="container pt-5">
+            <div class="row">
+
+                <div class="col-12 col-xl-6 mx-auto">
+                    <img src="birthday-banner.png" alt="Happy Birthday Banner">
+                </div>
+
+                <div class="col-12  text-center">
+                    <div id="name" class="area">Atharva</div>
+                </div>
+
+                <div class="col-12 text-center">
+                    <div class="type-wrap">
+                        <div id="typed-strings" class="typing">
+                            <h2>Happy Birthday <i id="nae">Atharva</i></h2>
+                            <h2>Have a wonderful 1st Birthday!</h2>
+                            <h2>Filled with joy and happiness 🎉</h2>
+                            <h2>You bring so much love to our lives ❤️</h2>
+                            <h2>Wishing you a magical year ahead ✨</h2>
+                        </div>
+                        <span id="typed" style="white-space:pre;"></span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-xl-3 cake">
+                    <img src="birthday-cake.gif" alt="Birthday Cake">
+                </div>
+            </div>
+        </div>
+        <img src="balloon-border.png" width="100%" class="balloon-border">
+    </div>
+</body>
+<script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="birthday-script.js"></script>
+
+</html>

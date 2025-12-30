@@ -1,0 +1,68 @@
+<svg width="1200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Balloons -->
+  <g id="balloon1">
+    <ellipse cx="100" cy="120" rx="40" ry="50" fill="#FF6B6B" stroke="#CC5555" stroke-width="2"/>
+    <line x1="100" y1="170" x2="100" y2="200" stroke="#888" stroke-width="2"/>
+    <text x="95" y="135" font-size="24">🎈</text>
+  </g>
+  
+  <g id="balloon2">
+    <ellipse cx="220" cy="100" rx="40" ry="50" fill="#4ECDC4" stroke="#3DA89C" stroke-width="2"/>
+    <line x1="220" y1="150" x2="220" y2="200" stroke="#888" stroke-width="2"/>
+    <text x="215" y="115" font-size="24">🎈</text>
+  </g>
+  
+  <g id="balloon3">
+    <ellipse cx="340" cy="130" rx="40" ry="50" fill="#FFD93D" stroke="#CCAD31" stroke-width="2"/>
+    <line x1="340" y1="180" x2="340" y2="200" stroke="#888" stroke-width="2"/>
+    <text x="335" y="145" font-size="24">🎈</text>
+  </g>
+  
+  <g id="balloon4">
+    <ellipse cx="460" cy="110" rx="40" ry="50" fill="#FF6BCB" stroke="#CC55A2" stroke-width="2"/>
+    <line x1="460" y1="160" x2="460" y2="200" stroke="#888" stroke-width="2"/>
+    <text x="455" y="125" font-size="24">🎈</text>
+  </g>
+  
+  <g id="balloon5">
+    <ellipse cx="580" cy="125" rx="40" ry="50" fill="#A8E6CF" stroke="#86B8A4" stroke-width="2"/>
+    <line x1="580" y1="175" x2="580" y2="200" stroke="#888" stroke-width="2"/>
+    <text x="575" y="140" font-size="24">🎈</text>
+  </g>
+  
+  <g id="balloon6">
+    <ellipse cx="700" cy="105" rx="40" ry="50" fill="#FFB6C1" stroke="#CC929A" stroke-width="2"/>
+    <line x1="700" y1="155" x2="700" y2="200" stroke="#888" stroke-width="2"/>
+    <text x="695" y="120" font-size="24">🎈</text>
+  </g>
+  
+  <g id="balloon7">
+    <ellipse cx="820" cy="135" rx="40" ry="50" fill="#C7CEEA" stroke="#9FA6BB" stroke-width="2"/>
+    <line x1="820" y1="185" x2="820" y2="200" stroke="#888" stroke-width="2"/>
+    <text x="815" y="150" font-size="24">🎈</text>
+  </g>
+  
+  <g id="balloon8">
+    <ellipse cx="940" cy="115" rx="40" ry="50" fill="#FFDAB9" stroke="#CCae94" stroke-width="2"/>
+    <line x1="940" y1="165" x2="940" y2="200" stroke="#888" stroke-width="2"/>
+    <text x="935" y="130" font-size="24">🎈</text>
+  </g>
+  
+  <g id="balloon9">
+    <ellipse cx="1060" cy="120" rx="40" ry="50" fill="#B4E7CE" stroke="#90B9A5" stroke-width="2"/>
+    <line x1="1060" y1="170" x2="1060" y2="200" stroke="#888" stroke-width="2"/>
+    <text x="1055" y="135" font-size="24">🎈</text>
+  </g>
+  
+  <!-- Stars and confetti -->
+  <text x="50" y="50" font-size="20">⭐</text>
+  <text x="180" y="30" font-size="20">✨</text>
+  <text x="300" y="40" font-size="20">🎊</text>
+  <text x="420" y="25" font-size="20">⭐</text>
+  <text x="540" y="45" font-size="20">✨</text>
+  <text x="660" y="35" font-size="20">🎊</text>
+  <text x="780" y="50" font-size="20">⭐</text>
+  <text x="900" y="30" font-size="20">✨</text>
+  <text x="1020" y="40" font-size="20">🎊</text>
+  <text x="1140" y="35" font-size="20">⭐</text>
+</svg>
