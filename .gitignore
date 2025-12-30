@@ -1,0 +1,59 @@
+# Node / JS
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+
+# Build / dist
+dist/
+build/
+.cache/
+/.parcel-cache/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment
+.env
+.env.*
+secrets.json
+
+# Logs
+*.log
+logs/
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Media (keep out of repo — add media to .gitignore, but keep README files if desired)
+/public/videos/
+/public/music/
+
+# Optional: ignore large files anywhere
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.mp3
+
+# Ignore local dev server state
+*.pid
+
+# Other
+coverage/
+.sass-cache/
+.idea/
+
+# Keep small README files in media folders by explicitly negating if needed
+!public/videos/README.md
+!public/music/README.md
