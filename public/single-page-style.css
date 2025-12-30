@@ -669,6 +669,7 @@ body::after {
     object-fit: cover;
     border-radius: 15px;
     display: block;
+    image-orientation: from-image;
 }
 
 .photo-overlay {
@@ -930,6 +931,8 @@ body::after {
     border-radius: 10px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     animation: zoomIn 0.3s ease;
+    image-orientation: from-image;
+    object-fit: contain;
 }
 
 @keyframes zoomIn {

@@ -38,13 +38,21 @@ __pycache__/
 /public/videos/
 /public/music/
 
-# Optional: ignore large files anywhere
+# Optional: ignore large video/audio files anywhere
 *.mp4
 *.mov
 *.avi
 *.mkv
 *.webm
 *.mp3
+*.wav
+*.ogg
+
+# But ALLOW images (jpg, png) - they will be included in Git
+# Comment out or remove these lines to include images:
+# *.jpg
+# *.png
+# *.gif
 
 # Ignore local dev server state
 *.pid
