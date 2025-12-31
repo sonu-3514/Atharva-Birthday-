@@ -5,29 +5,14 @@
     box-sizing: border-box;
 }
 
-/* ===== CRITICAL: Mobile Scroll Performance Fixes ===== */
 html {
     scroll-behavior: smooth;
-    /* Prevent bounce/elastic scrolling on mobile */
-    overscroll-behavior-y: none;
-    /* Smooth momentum scrolling on iOS */
-    -webkit-overflow-scrolling: touch;
-    /* Prevent text selection causing scroll issues */
-    -webkit-user-select: none;
-    user-select: none;
 }
 
 body {
-    /* Prevent overscroll bounce on Android/iOS */
-    overscroll-behavior: none;
-    /* Smooth touch scrolling */
-    -webkit-overflow-scrolling: touch;
-    /* Prevent pull-to-refresh on mobile Chrome */
-    touch-action: pan-y;
-    /* GPU acceleration for smoother rendering */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    will-change: scroll-position;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    background: #000;
 }
 
 /* ===== Responsive Heading Adjustments ===== */
@@ -136,13 +121,6 @@ body::before {
     background-size: 400% 400%;
     animation: aestheticGradient 20s ease infinite;
     z-index: -2;
-    /* GPU acceleration for background */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    will-change: background-position;
-    /* Prevent repaint on scroll */
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
 }
 
 @keyframes aestheticGradient {
@@ -177,11 +155,6 @@ body::after {
     pointer-events: none;
     z-index: 1;
     overflow: hidden;
-    /* GPU acceleration */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
 }
 
 .balloon {
@@ -189,46 +162,35 @@ body::after {
     font-size: 3rem;
     animation: floatUp 15s infinite ease-in;
     opacity: 0;
-    /* CRITICAL: GPU acceleration for smooth animation */
-    will-change: transform, opacity;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    /* Prevent touch events */
-    pointer-events: none;
-    /* Force composite layer */
-    -webkit-perspective: 1000;
-    perspective: 1000;
 }
 
 @keyframes floatUp {
     0% {
-        transform: translateY(120vh) translateX(0) rotate(0deg) translateZ(0);
+        transform: translateY(120vh) translateX(0) rotate(0deg);
         opacity: 0;
     }
     10% { 
         opacity: 1; 
-        transform: translateY(100vh) translateX(-30px) rotate(36deg) translateZ(0);
+        transform: translateY(100vh) translateX(-30px) rotate(36deg);
     }
     25% {
-        transform: translateY(75vh) translateX(40px) rotate(90deg) translateZ(0);
+        transform: translateY(75vh) translateX(40px) rotate(90deg);
     }
     40% {
-        transform: translateY(60vh) translateX(-50px) rotate(144deg) translateZ(0);
+        transform: translateY(60vh) translateX(-50px) rotate(144deg);
     }
     55% {
-        transform: translateY(45vh) translateX(35px) rotate(198deg) translateZ(0);
+        transform: translateY(45vh) translateX(35px) rotate(198deg);
     }
     70% {
-        transform: translateY(30vh) translateX(-40px) rotate(252deg) translateZ(0);
+        transform: translateY(30vh) translateX(-40px) rotate(252deg);
     }
     85% {
-        transform: translateY(15vh) translateX(25px) rotate(306deg) translateZ(0);
+        transform: translateY(15vh) translateX(25px) rotate(306deg);
     }
     90% { opacity: 1; }
     100% {
-        transform: translateY(-20vh) translateX(0) rotate(360deg) translateZ(0);
+        transform: translateY(-20vh) translateX(0) rotate(360deg);
         opacity: 0;
     }
 }
@@ -242,10 +204,6 @@ body::after {
     height: 100%;
     pointer-events: none;
     z-index: 2;
-    /* GPU acceleration */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    will-change: transform;
 }
 
 /* ===== FIXED NAVIGATION ===== */
@@ -1479,66 +1437,7 @@ body::after {
 }
 
 @keyframes rotate {
-    0%, 100% { transform: rotate(0deg) translateZ(0); }
-    50% { transform: rotate(20deg) translateZ(0); }
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(20deg); }
 }
 
-/* ===== CRITICAL MOBILE PERFORMANCE FIXES ===== */
-@media (max-width: 768px) {
-    /* Reduce animations on mobile for better performance */
-    * {
-        animation-duration: 0.8s !important;
-    }
-    
-    /* Faster gradient animation on mobile */
-    body::before {
-        animation-duration: 30s !important;
-    }
-    
-    /* Reduce balloon animation complexity */
-    .balloon {
-        font-size: 2.5rem;
-        animation-duration: 18s !important;
-    }
-    
-    /* Optimize scroll performance */
-    .section {
-        will-change: auto;
-    }
-    
-    /* Disable hover effects on touch devices */
-    .photo-wrapper:hover,
-    .photo-card:hover,
-    .video-item:hover {
-        transform: none !important;
-    }
-    
-    /* Optimize images for mobile */
-    img {
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-    }
-}
-
-/* ===== ANDROID-SPECIFIC FIXES ===== */
-@supports (-webkit-appearance: none) {
-    body {
-        /* Prevent momentum scroll issues */
-        -webkit-overflow-scrolling: touch;
-        /* Disable elastic bounce */
-        overscroll-behavior-y: contain;
-    }
-    
-    /* Fix scroll jank on Android Chrome */
-    .section,
-    .container,
-    .photo-wrapper,
-    .video-item {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        -webkit-perspective: 1000;
-        perspective: 1000;
-    }
-}

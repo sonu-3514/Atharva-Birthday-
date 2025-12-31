@@ -53,18 +53,9 @@ function createBalloons() {
     const container = document.getElementById('balloonsContainer');
     if (!container) return;
     
-    // MOBILE OPTIMIZATION: Reduce balloon count on mobile devices
-    const isMobile = window.innerWidth <= 768;
-    const balloonInterval = isMobile ? 3000 : 1500; // Slower on mobile
-    const maxBalloons = isMobile ? 8 : 15; // Less balloons on mobile
-    let currentBalloons = 0;
-    
     const balloonEmojis = ['🎈', '🎉', '🎊', '🎁', '🎀'];
     
     setInterval(() => {
-        // Don't create more balloons if we've hit the limit
-        if (currentBalloons >= maxBalloons) return;
-        
         const balloon = document.createElement('div');
         balloon.className = 'balloon';
         balloon.textContent = balloonEmojis[Math.floor(Math.random() * balloonEmojis.length)];
@@ -82,18 +73,12 @@ function createBalloons() {
         const drift = (Math.random() - 0.5) * 200; // -100px to +100px
         balloon.style.setProperty('--drift', drift + 'px');
         
-        // PERFORMANCE: Force GPU layer
-        balloon.style.transform = 'translateZ(0)';
-        balloon.style.willChange = 'transform, opacity';
-        
         container.appendChild(balloon);
-        currentBalloons++;
         
         setTimeout(() => {
             balloon.remove();
-            currentBalloons--;
         }, 22000);
-    }, balloonInterval);
+    }, 1500);
 }
 
 createBalloons();
