@@ -7,12 +7,22 @@
 
 html {
     scroll-behavior: smooth;
+    /* Fix mobile bounce scrolling */
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
     background: #000;
+    /* Fix mobile scroll hanging - SAFE, doesn't affect animations */
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+    /* Prevent pull-to-refresh on mobile Chrome */
+    overscroll-behavior-y: contain;
+    /* Fix touch delay */
+    touch-action: manipulation;
 }
 
 /* ===== Responsive Heading Adjustments ===== */
@@ -1430,14 +1440,66 @@ body::after {
 .emoji {
     display: inline-block;
     animation: rotate 3s ease-in-out infinite;
-    /* GPU acceleration */
-    will-change: transform;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
 }
 
 @keyframes rotate {
     0%, 100% { transform: rotate(0deg); }
     50% { transform: rotate(20deg); }
+}
+
+/* ===== MOBILE PERFORMANCE OPTIMIZATIONS (SAFE - Does NOT affect balloons) ===== */
+@media (max-width: 768px) {
+    /* Optimize images for mobile to prevent hanging */
+    img {
+        image-rendering: auto;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    /* Optimize video rendering on mobile */
+    video {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    /* Smooth scrolling sections */
+    .section {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Prevent layout shift on mobile */
+    .container {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+    
+    /* Disable hover effects on touch devices to prevent hanging */
+    .photo-wrapper:hover,
+    .photo-card:hover,
+    .video-item:hover,
+    .nav-item:hover {
+        transform: none !important;
+    }
+    
+    /* Optimize photo gallery for mobile */
+    .photo-wrapper {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    /* Optimize video items for mobile */
+    .video-item {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+}
+
+/* Fix for very small mobile devices */
+@media (max-width: 480px) {
+    /* Reduce complexity on small screens */
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 }
 
